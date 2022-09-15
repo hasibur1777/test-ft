@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>
+      Dynamic Family Tree/Organization Chart Plugin Example
+    </title>
+    <link
+      href="https://www.jqueryscript.net/css/jquerysctipttop.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="Themes/smoothness/jquery-ui-1.10.4.custom.min.css"
+      rel="stylesheet"
+    />
+    <link href="CSS/jHTree.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jQuery.jHTree.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        var jsonStructureObject = [
+          {
+            head: '1',
+            id: '1',
+            contents: 'A Contents',
+            children: [
+              {
+                head: '2',
+                id: '21',
+                contents: '21',
+                children: [
+                  {
+                    head: '3',
+                    id: '31',
+                    contents: '31',
+                    children: [
+                      {
+                        head: '4',
+                        id: '41',
+                        contents: '41',
+                      },
+                      {
+                        head: '4',
+                        id: '42',
+                        contents: '42',
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                head: '2',
+                id: '22',
+                contents: '22',
+                children: [
+                  {
+                    head: '3',
+                    id: '32',
+                    contents: '32',
+                    children: [
+                      {
+                        head: '4',
+                        id: '43',
+                        contents: '43',
+                      },
+                    ],
+                  },
+                  {
+                    head: '3',
+                    id: '33',
+                    contents: '33',
+                    children: [
+                      {
+                        head: '4',
+                        id: '44',
+                        contents: '44',
+                      },
+                      {
+                        head: '4',
+                        id: '45',
+                        contents: '45',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ];
+        //-----------
+        $('#tree').jHTree({
+          callType: 'obj',
+          structureObj: jsonStructureObject,
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      body {
+        background-color: #fafafa;
+        font-family: 'Roboto';
+      }
+      .container {
+        margin: 60px auto;
+        max-width: 1280px;
+      }
+      #themes {
+        font-size: 1.2em;
+      }
+
+      #set {
+        border: 2px solid #ddd;
+        padding: 2px;
+        background: #444;
+        width: 350px;
+        height: 30px;
+      }
+
+      #set a {
+        margin: 2px;
+        border: 1px solid #444;
+        float: left;
+      }
+
+      #set a:hover {
+        border-color: #fff;
+      }
+    </style>
+
+    <script type="text/javascript">
+      $(function () {
+        $('#themes a').click(function () {
+          var theme = $(this).attr('href');
+          $('head').append(
+            '<link href="' +
+              theme +
+              '" rel="Stylesheet" type="text/css" />'
+          );
+          return false;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dynamic Organization Chart Plugin</h1>
+      <div id="themes">
+        <span id="changeItUp">Change Theme</span>
+        <div id="set">
+          <a
+            href="Themes/smoothness/jquery-ui-1.10.4.custom.min.css"
+            title="Smoothness"
+          >
+            <img
+              src="images/themethumbs/themenail_smoothness.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+          <a
+            href="Themes/black-tie/jquery-ui-1.10.4.custom.min.css"
+            title="blacktie"
+          >
+            <img
+              src="images/themethumbs/themenail_blacktie.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+
+          <a
+            href="Themes/south-street/jquery-ui-1.10.4.custom.min.css"
+            title="South Street"
+          >
+            <img
+              src="images/themethumbs/themenail_southst.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+
+          <a
+            href="Themes/mint-choc/jquery-ui-1.10.4.custom.min.css"
+            title="Mint Choco"
+          >
+            <img
+              src="images/themethumbs/themenail_mintchoc.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+
+          <a
+            href="Themes/dot-luv/jquery-ui-1.10.4.custom.min.css"
+            title="Dot Luv"
+          >
+            <img
+              src="images/themethumbs/themenail_dotluv.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+
+          <a
+            href="Themes/humanity/jquery-ui-1.10.4.custom.min.css"
+            title="humanity"
+          >
+            <img
+              src="images/themethumbs/humanity.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+          <a
+            href="Themes/cupertino/jquery-ui-1.10.4.custom.min.css"
+            title="Cupertino"
+          >
+            <img
+              src="images/themethumbs/themenail_cupertino.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+          <a
+            href="Themes/le-frog/jquery-ui-1.10.4.custom.min.css"
+            title="le-frog"
+          >
+            <img
+              src="images/themethumbs/le-frog.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+          <a
+            href="Themes/swanky-purse/jquery-ui-1.10.4.custom.min.css"
+            title="swanky-purse"
+          >
+            <img
+              src="images/themethumbs/swanky-purse.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+
+          <a
+            href="Themes/trontastic/jquery-ui-1.10.4.custom.min.css"
+            title="trontastic"
+          >
+            <img
+              src="images/themethumbs/trontastic.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+
+          <a
+            href="Themes/ui-lightness/jquery-ui-1.10.4.custom.min.css"
+            title="lightness"
+          >
+            <img
+              src="images/themethumbs/lightness.png"
+              alt="image"
+              width="25"
+              height="22"
+            />
+          </a>
+        </div>
+      </div>
+
+      <br />
+      <div id="tree"></div>
+    </div>
+    <script type="text/javascript">
+      (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src =
+          ('https:' == document.location.protocol
+            ? 'https://ssl'
+            : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
